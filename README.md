@@ -4,6 +4,11 @@ Call __self-tracing-hyperapp__ with an additional truthy argument to enable real
 ```js
 let main = app(state, actions, view, container, true);
 ```
+
+---
+
+> npm install self-tracing-hyperapp
+
 ---
 ### Additional Functionality
 
