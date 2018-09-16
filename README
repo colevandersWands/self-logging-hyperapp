@@ -1,70 +1,26 @@
-# Hyperapp Gizmo
+## Self-Tracing Hyperapp
 
-[![Travis CI](https://img.shields.io/travis/hyperappJS/hyperapp-gizmo/master.svg)](https://travis-ci.org/hyperapp/hyperapp-gizmo) [![npm](https://img.shields.io/npm/v/hyperapp-gizmo.svg)](https://www.npmjs.org/package/hyperapp-thin) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
-
-Hyperapp Gizmo (use @hyperapp/gizmo if this is an [organization](https://www.npmjs.com/org/hyperapp) module) is a mischievous creature, higher-order-app, helper library, unary function or whatever for [Hyperapp](https://github.com/hyperapp/hyperapp). The following bullet list is optional. If you feel you don't need it, then don't bother.
-
-* **Feature1** — One or two sentences describing this feature.
-* **Feature2** — One or two sentences describing this feature.
-* **Feature3** — One or two sentences describing this feature.
-
-## Getting Started
-
-How to get started with Hyperapp Gizmo for busy people. Let's say you have 5 minutes. This section is optional too. If you use this section, include a code example as follows.
-
-Our first example is what the example is about and what you can do with it. Go ahead and [try it online](https://codepen.io/hyperapp/).
-
+Call __self-tracing-hyperapp__ with an additional truthy argument to enable real-time self-logging:
 ```js
-import { app } from "hyperapp"
-import { withGizmo } from "hyperapp-gizmo"
-import { withMischief } from "hyperapp-mischief" 
-
-// ...
-
-withGizmo(withMischief(options)(app))(state, actions, view, document.body)
+let main = app(state, actions, view, container, true);
 ```
+---
+### Additional Functionality
 
-## Installation
+__Additional Property :__
+* __.log__- Accumulates all acitons calls, parial states, and v-dom rerenders through the lifecycle of your application. Action calls and their direct downstream effects are logged under the same entry ID.
+* __.log.actions -__ Stores a mirror of the application's actions with functions replaced by true/false to indicate if it is being tracked.
 
-Install with npm or Yarn.
-
-<pre>
-npm i <a href=https://www.npmjs.com/package/hyperapp-gizmo>hyperapp-gizmo</a>
-</pre>
-
-Then with a module bundler like [Rollup](https://rollupjs.org) or [Webpack](https://webpack.js.org), use as you would anything else.
-
-```js
-import { gizmo } from "hyperapp-gizmo"
-```
-
-If you don't want to set up a build environment, you can download Hyperapp Gizmo from a CDN like [unpkg.com](https://unpkg.com/hyperapp-gizmo) and it will be globally available through the <samp>window.gizmo</samp> object. If your library's name is a compound word, use <samp>window.camelCase</samp>.
-
-```html
-<script src="https://unpkg.com/hyperapp-gizmo"></script>
-```
-
-## Usage
-
-Describe how to use Hyperapp Gizmo. Include <samp>import</samp> declarations. Don't let users guess. Be exhaustive. This section is required. If it makes sense, consider adding a screenshot. Dont't overdo it, a useless screenshot is worse than no screenshot. 
-
-```js
-import { app } from "hyperapp"
-import { gizmo } from "hyperapp-gizmo"
-
-gizmo(app)(state, actions, view, container)
-```
-
-## Overview
-
-Explain the concepts you need understand to use Hyperapp Gizmo. If users made it here, then give them what they want. Tell them everything they need to know about your library. This section is optional. 
-
-Feel free to break up this section into several subsections or into another section at the same level. Be creative! You can talk about the history of the project, scientific background, etc. You can use emoji, but use it sparingly, please! 🙏
-
-## License
-
-Hyperapp Gizmo is MIT licensed. See [LICENSE](LICENSE.md).
-
+__Additional Methods:__		
+|  | args | behavior | 
+| --- | --- | --- |
+| .logActions | nothing, a string, or array of strings |	prints all actions, a top-level action, or a nested action |
+| .logState | nothing, a string, or array of string |	prints full state, a top-level state property, or a nested state |
+| .logVdom | nothing, or a string | prints the whole v-dom, or the element with id matching your argument |
+| .logIgnore | a string, or array of strings | will exclude the designated top-level, or nested action from the log. the partial state and vdom from this action will also be ignored |  
+| .logTrack |  a string, or array of strings | will include the designated top-level or nested action in the log. the partial state and vdom from this action will be logged |
+| .logFlag | strings are best, but anything works | pushes your arg into the log |
+| .logConfig | { actions: boolean, state: boolean, vdom: boolean } | globally tracks or ignores all actions, state changes, or vdom changes |
 
 ___
 ___
