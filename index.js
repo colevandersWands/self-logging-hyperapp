@@ -202,7 +202,8 @@ function app(state, actions, view, container, trace) {
       rootElement = patch(container, rootElement, oldNode, (oldNode = node))
       /*-trace vdom-*/  if (trace && !ignore_trace && track.vdom) {
         let v_dom_log = {};
-        v_dom_log.virtual_dom = h(view);
+        let v_dom = resolveNode(view);
+        v_dom_log.v_dom = JSON.parse(JSON.stringify(v_dom));
         v_dom_log._ = trace_id;
         wiredActions.log.push( v_dom_log );
       };
