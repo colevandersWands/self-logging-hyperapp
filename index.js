@@ -77,7 +77,7 @@ function app(state, actions, view, container, trace) {
       };
     actions.logVdom = id => () => {
         if ( id ) {
-            let element = find_element(resolveNode(view), id);
+            let element = find_element(view, id);
             if ( element ) {
               console.log(element);
             } else {
@@ -150,7 +150,10 @@ function app(state, actions, view, container, trace) {
           };
           wiredActions.log.push('- config: ' + JSON.stringify(track));
         };
-
+    wiredActions.log.push({ 
+          initial_state: state,
+          _: trace_id
+        });
     function build_log_list(target, _key) {
       let copy;
       if (typeof target === 'function') {
@@ -199,7 +202,7 @@ function app(state, actions, view, container, trace) {
       rootElement = patch(container, rootElement, oldNode, (oldNode = node))
       /*-trace vdom-*/  if (trace && !ignore_trace && track.vdom) {
         let v_dom_log = {};
-        v_dom_log.virtual_dom = resolveNode(view);
+        v_dom_log.virtual_dom = h(view);
         v_dom_log._ = trace_id;
         wiredActions.log.push( v_dom_log );
       };

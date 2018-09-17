@@ -13,7 +13,7 @@ This version of Hyperapp is non-breaking, you can swap it out in any existing V1
 ---
 ### Additional Functionality
 
-__Additional Property :__
+__Additional Properties :__
 * __.log__- Accumulates all acitons calls, parial states, and v-dom rerenders through the lifecycle of your application. Action calls and their direct downstream effects are logged under the same entry ID.
 * __.log.actions -__ Stores a mirror of the application's actions with functions replaced by true/false to indicate if it is being tracked.
 
