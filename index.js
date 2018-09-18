@@ -77,7 +77,7 @@ function app(state, actions, view, container, trace) {
       };
     actions.logVdom = id => () => {
         if ( id ) {
-            let element = find_element(view, id);
+            let element = find_element(resolveNode(view), id);
             if ( element ) {
               console.log(element);
             } else {
