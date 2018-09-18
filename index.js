@@ -151,7 +151,7 @@ function app(state, actions, view, container, trace) {
           wiredActions.log.push('- config: ' + JSON.stringify(track));
         };
     wiredActions.log.push({ 
-          initial_state: state,
+          initial_state: JSON.parse(JSON.stringify(state)),
           _: trace_id
         });
     function build_log_list(target, _key) {
