@@ -8,7 +8,7 @@ Using this logged version will help you understand:
 * stateless UI components
 * frontend app life cycle
 
-to use: Call __self-logging-hyperapp__ with an additional truthy argument to enable real-time self-logging:
+to use: copy & require self-tracing-hyperapp.js into your project, then use __app()__ as you would with a regular hyperapp V1 project. There is an additional boolean argument to enable or disable self-logging:
 
 ```js
 var app_1 = app(state, actions, view, container, true); // auto-logging is enabled in this instance
