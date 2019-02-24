@@ -1,16 +1,24 @@
-## Self-Tracing Hyperapp
+## Self-Logging Hyperapp
 
-Call __self-tracing-hyperapp__ with an additional truthy argument to enable real-time self-logging:
+This is a variation of [Hyperapp](https://github.com/jorgebucaran/hyperapp) by [jorgebucaran](https://github.com/jorgebucaran) modified for learning & studying.   Hyperapp is a minimal frontend framework that illustrates the key principles of larger frameworks without the complexity and build environment.    
+
+Using this logged version will help you understand:
+* virtual dom
+* state & actions
+* stateless UI components
+* frontend app life cycle
+
+to use: Call __self-logging-hyperapp__ with an additional truthy argument to enable real-time self-logging:
+
 ```js
-let main = app(state, actions, view, container, true);
+var app_1 = app(state, actions, view, container, true); // auto-logging is enabled in this instance
+
+var app_2 = app(state, actions, view, container, false); // auto-logging is disabled in this instance
 ```
-This version of Hyperapp is non-breaking, you can swap it out in any existing V1 hyperapp project with no additional changes necessary.
+This version of Hyperapp is non-breaking, you can swap it out in any existing V1 hyperapp project for debugging or study.
 
 ---
 
-> npm install self-tracing-hyperapp
-
----
 ### Additional Functionality
 
 __Additional Properties :__
@@ -31,4 +39,4 @@ __Additional Methods:__
 
 ___
 ___
-### <a href="http://elewa.education/blog" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/34921062-506450ae-f97d-11e7-875f-6feeb26ad72d.png" width="100" height="40"/></a>
+### <a href="http://janke-learning.org" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/50098409-22575780-021c-11e9-99e1-962787adaded.png" width="40" height="40"></img> Janke Learning</a>

@@ -594,3 +594,6 @@ function app(state, actions, view, container, trace) {
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
+/*
+  self-logging remix: https://github.com/janke-learning/self-logging-hyperapp
+*/
