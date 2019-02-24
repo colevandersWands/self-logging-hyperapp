@@ -29,11 +29,11 @@ __Additional Methods:__
 
 |  | args | behavior |   
 | --- | --- | --- |  
-| .logActions | nothing, a string, or array of strings |	prints all actions, a top-level action, or a nested action |  
-| .logState | nothing, a string, or array of string |	prints full state, a top-level state property, or a nested state |  
+| .logActions | nothing, a string, or array of strings |	prints all actions, a top-level action, or a nested action (the array is a path to the desired nested property) |  
+| .logState | nothing, a string, or array of string |	prints full state, a top-level state property, or a nested state property (the array is a path to the desired nested property) |  
 | .logVdom | nothing, or a string | prints the whole v-dom, or the element with id matching your argument |  
-| .logIgnore | a string, or array of strings | will exclude the designated top-level, or nested action from the log. the partial state and vdom from this action will also be ignored |    
-| .logTrack |  a string, or array of strings | will include the designated top-level or nested action in the log. the partial state and vdom from this action will be logged |  
+| .logIgnore | a string, or array of strings | will exclude the designated top-level, or nested action from the log. the partial state and vdom updates resulting from calls to this action will also be ignored |    
+| .logTrack |  a string, or array of strings | will include the designated top-level or nested action in the log. the partial state and vdom resulting from calls to this action will be logged |  
 | .logFlag | strings are best, but anything works | pushes your arg into the log |  
 | .logConfig | { actions: boolean, state: boolean, vdom: boolean } | globally tracks or ignores all actions, state changes, or vdom changes |  
 
