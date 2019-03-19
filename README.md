@@ -19,7 +19,16 @@ This version of Hyperapp is non-breaking, you can swap it out in any existing V1
 
 ---
 
-### Additional Functionality
+## Project Starters
+
+* [hyperapp starter repo](https://github.com/janke-learning/hyperapp-starter-basic)  
+* [hyperapp replit repl.it](https://repl.it/@colevandersWands/hyperapp-starter-basic)  
+* [examples gallery](https://repl.it/@colevandersWands/hyperapp-examples-gallery)
+* [exampldemo calc](https://repl.it/@colevandersWands/hyperapping-calc-1)  
+
+---
+
+## Additional Functionality
 
 __Additional Properties :__
 * __.log__- Accumulates all acitons calls, parial states, and v-dom rerenders through the lifecycle of your application. Action calls and their direct downstream effects are logged under the same entry ID.
