@@ -1,6 +1,6 @@
 ## Self-Logging Hyperapp
 
-This is a variation of [Hyperapp](https://github.com/jorgebucaran/hyperapp) by [jorgebucaran](https://github.com/jorgebucaran) modified for learning & studying.   Hyperapp is a minimal frontend framework that illustrates the key principles of larger frameworks without the complexity and build environment.    
+This is a variation of [Hyperapp](https://github.com/jorgebucaran/hyperapp) by [jorgebucaran](https://github.com/jorgebucaran) modified to help you prepare for popular frontend frameworks like Vue, React and Angular.   Hyperapp is a minimal frontend framework that illustrates the key principles of larger frameworks without the complexity and build environment.    
 
 Using this logged version will help you understand:
 * virtual dom
@@ -28,7 +28,7 @@ This version of Hyperapp is non-breaking, you can swap it out in any existing V1
 
 ---
 
-## Additional Functionality
+## Log Documentation
 
 __Additional Properties :__
 * __.log__- Accumulates all acitons calls, parial states, and v-dom rerenders through the lifecycle of your application. Action calls and their direct downstream effects are logged under the same entry ID.
