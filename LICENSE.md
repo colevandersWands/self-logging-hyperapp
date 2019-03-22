@@ -4,8 +4,6 @@ Licensed to Janke Learning: @janke-learning, janke-learning.org
 
 Started by [@jorgebucaran](https://twitter.com/JorgeBucaran): [original project](https://github.com/jorgebucaran/hyperapp)
 
-Logged by Evan Cole: @colevandersWands,  evan@elewa.education
-
 ___
 ___
 ### <a href="http://janke-learning.org" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/50098409-22575780-021c-11e9-99e1-962787adaded.png" width="40" height="40"></img> Janke Learning</a>
