@@ -202,9 +202,9 @@ function app(state, actions, view, container, trace) {
       rootElement = patch(container, rootElement, oldNode, (oldNode = node))
       /*-trace vdom-*/  if (trace && !ignore_trace && track.vdom) {
         let v_dom_log = {};
+        v_dom_log.$ = trace_id;
         let v_dom = resolveNode(view);
         v_dom_log.v_dom = JSON.parse(JSON.stringify(v_dom));
-        v_dom_log._ = trace_id;
         wiredActions.log.push( v_dom_log );
       };
     }
@@ -270,9 +270,9 @@ function app(state, actions, view, container, trace) {
                 }
                 if ( trace_action ) {
                   let actionLog = {};
+                  actionLog.$ = trace_id;
                   totes_path.length === 1 ? actionLog.action = key : actionLog.action = totes_path;
                   if (data !== undefined) actionLog.args = data;
-                  actionLog._ = trace_id;
                   wiredActions.log.push( actionLog );
                   ignore_trace = false;
                 } else {
@@ -285,11 +285,11 @@ function app(state, actions, view, container, trace) {
                 /*-trace state-*/  if (trace && !ignore_trace && track.state) {
                   if (result !== undefined) {
                     let stateLog = {};
+                    stateLog.$ = trace_id;
                     stateLog.state = {
                         par_state: JSON.parse(JSON.stringify(result)),
                         new_state: JSON.parse(JSON.stringify(state)),
                       };
-                    stateLog._ = trace_id;
                     wiredActions.log.push( stateLog )
                   };
                 };
