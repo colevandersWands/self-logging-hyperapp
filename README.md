@@ -1,6 +1,6 @@
 ## Self-Logging Hyperapp
 
-This is a variation of [Hyperapp](https://github.com/jorgebucaran/hyperapp) by [jorgebucaran](https://github.com/jorgebucaran) modified to help you prepare for popular frontend frameworks like Vue, React and Angular.   Hyperapp is a minimal frontend framework that illustrates the key principles of larger frameworks without the complexity and build environment.    
+This is a variation of [Hyperapp V1](https://github.com/jorgebucaran/hyperapp/tree/V1) by [jorgebucaran](https://github.com/jorgebucaran) modified to help you prepare for popular frontend frameworks like Vue, React and Angular.   Hyperapp is a minimal frontend framework that illustrates the key principles of larger frameworks without the complexity and build environment.    
 
 Using this logged version will help you understand:
 * virtual dom
