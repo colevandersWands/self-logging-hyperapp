@@ -131,7 +131,7 @@ function app(state, actions, view, container, trace) {
           };
           namespace[key] = false;
         };
-    wiredActions.logTrace = (path) => {
+    wiredActions.logTrack = (path) => {
           wiredActions.log.push('- tracing ' + path.toString());
           if (typeof path === 'string') {
             path = [path]
