@@ -17,6 +17,12 @@ const actions = {
   pop: () => state => {
     state.list.pop();
     return { list: state.list };
+  },
+  // an action that does not update state
+  //  see how this effects the life cycle log
+  // no state update means no v_dom update!
+  log_stack: () => state => {
+    console.log(state.list);
   }
 };
 
@@ -31,7 +37,7 @@ const text_ = (id, value) => { return (h("p", { id }, value)) };
 
 const list_ = (list, text_comp) => { 
   let texts = [];
-  for (let i = list.length; i > 0; i-- ) {
+  for (let i = list.length - 1; i >= 0; i-- ) {
     let new_ui_comp = text_comp(i, list[i]);
     texts.push(new_ui_comp);
   };
@@ -55,6 +61,7 @@ const view = (state, actions) => { return (
     button_('push', actions.push, 'button'),
     button_('pop', actions.pop, 'button'),
     list_(state.list, text_),
+    button_('log stack', actions.log_list, 'button'),
   )
 )};
 
