@@ -114,18 +114,18 @@ function app(state, actions, view, container, trace) {
     var totes_path;
     var trace_id = 0;
     wiredActions.log = [];
-    wiredActions.log.actions = {};
-    wiredActions.log.actions = build_log_list(actions);
-    delete wiredActions.log.actions.logActions;
-    delete wiredActions.log.actions.logState;
-    delete wiredActions.log.actions.logVdom;
+    wiredActions.log.tracking = {};
+    wiredActions.log.tracking = build_log_list(actions);
+    delete wiredActions.log.tracking.logActions;
+    delete wiredActions.log.tracking.logState;
+    delete wiredActions.log.tracking.logVdom;
     wiredActions.logIgnore = (path) => {
           wiredActions.log.push('- ignoring ' + path.toString());
           if (typeof path === 'string') {
             path = [path]
           };
           let key = path.pop();
-          let namespace = wiredActions.log.actions;
+          let namespace = wiredActions.log.tracking;
           for (let step of path) {
             namespace = namespace[step];
           };
@@ -137,7 +137,7 @@ function app(state, actions, view, container, trace) {
             path = [path]
           };
           let key = path.pop();
-          let namespace = wiredActions.log.actions;
+          let namespace = wiredActions.log.tracking;
           for (let step of path) {
             namespace = namespace[step];
           };
@@ -263,7 +263,7 @@ function app(state, actions, view, container, trace) {
                 totes_path = [];
                 totes_path = path.map(x => x);
                 totes_path.push(key)
-                let trace_action = wiredActions.log.actions;
+                let trace_action = wiredActions.log.tracking;
                 console
                 for (let step of totes_path) {
                   trace_action = trace_action[step];
