@@ -23,15 +23,19 @@ This version of Hyperapp is non-breaking, you can swap it out in any existing V1
 
 * [hyperapp starter repo](https://github.com/janke-learning/hyperapp-starter-basic)  
 * [hyperapp replit repl.it](https://repl.it/@colevandersWands/hyperapp-starter-basic)  
+
+## Examples to Study
+
+* [this repo's demo](https://janke-learning.github.io/self-logging-hyperapp)
 * [examples gallery](https://repl.it/@colevandersWands/hyperapp-examples-gallery)
-* [exampldemo calc](https://repl.it/@colevandersWands/hyperapping-calc-1)  
+* [example demo calc](https://repl.it/@colevandersWands/hyperapping-calc-1)  
 
 ---
 
 ## Log Documentation
 
 __Additional Properties :__
-* __.log__- Accumulates all acitons calls, parial states, and v-dom rerenders through the lifecycle of your application. Action calls and their direct downstream effects are logged under the same entry ID.
+* __.log__- Accumulates all acitons calls, state changes, and v-dom rerenders through the lifecycle of your application. Action calls and their direct downstream effects are logged under the same entry ID.
 * __.log.tracking -__ Stores a mirror of the application's actions with functions replaced by true/false to indicate if it is being tracked.
 
 __Additional Methods:__		

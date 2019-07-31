@@ -285,7 +285,10 @@ function app(state, actions, view, container, trace) {
                 /*-trace state-*/  if (trace && !ignore_trace && track.state) {
                   if (result !== undefined) {
                     let stateLog = {};
-                    stateLog.partial_state = JSON.parse(JSON.stringify(result))
+                    stateLog.state = {
+                        par_state: JSON.parse(JSON.stringify(result)),
+                        new_state: JSON.parse(JSON.stringify(state)),
+                      };
                     stateLog._ = trace_id;
                     wiredActions.log.push( stateLog )
                   };
