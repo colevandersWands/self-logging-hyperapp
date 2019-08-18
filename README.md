@@ -47,7 +47,7 @@ __Additional Methods:__
 | .logVdom | nothing, or a string | prints the whole v-dom, or the element with id matching your argument |  
 | .logIgnore | a string, or array of strings | will exclude the designated top-level, or nested action from the log. the partial state and vdom updates resulting from calls to this action will also be ignored |    
 | .logTrack |  a string, or array of strings | will include the designated top-level or nested action in the log. the partial state and vdom resulting from calls to this action will be logged |  
-| .logFlag | strings are best, but anything works | pushes your arg into the log |  
+| .logPush | you can push anything into the log | pushes your arg into the log |  
 | .logConfig | { actions: boolean, state: boolean, vdom: boolean } | enable or disable logging of the lifecycle stages.  This will apply across all actions, and is applied after  ```.logIgnore``` and ```.logTrack``` |  
 
 ___
